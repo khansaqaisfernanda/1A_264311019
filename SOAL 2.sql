@@ -1,8 +1,10 @@
+
 INSERT INTO pengguna (nama_pengguna, peran, email)
 VALUES
     ('Dr. Siti Aminah, S.Gz', 'Ahli Gizi', 'siti.aminah@mbg.go.id'),
     ('Budi Prasetyo', 'Petugas Input', 'budi.prasetyo@mbg.go.id'),
     ('Admin Sistem', 'Admin', 'admin@mbg.go.id');
+
 
 INSERT INTO menu_harian (nama_menu, tanggal_menu, id_pengguna_penyusun, id_pengguna_penginput)
 VALUES
@@ -20,12 +22,20 @@ VALUES
 SELECT * FROM pengguna;
 
 
+
 UPDATE perubahan_menu
 SET status_validasi  = 'Disetujui',
     tanggal_validasi = '2026-10-20',
     id_validator     = 1
 WHERE id_perubahan = 2;
 
+SELECT id_perubahan, id_menu, status_validasi, tanggal_validasi, id_validator 
+FROM perubahan_menu 
+WHERE id_perubahan = 2;
+
 
 DELETE FROM perubahan_menu
 WHERE id_perubahan = 3;
+
+
+SELECT * FROM perubahan_menu;
